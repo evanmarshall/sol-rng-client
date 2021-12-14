@@ -1,0 +1,124 @@
+{
+    "version": "0.0.0",
+    "name": "solRng",
+    "instructions": [
+      {
+        "name": "postRandom",
+        "accounts": [
+          {
+            "name": "random",
+            "isMut": true,
+            "isSigner": false
+          },
+          {
+            "name": "oracle",
+            "isMut": true,
+            "isSigner": true
+          },
+          {
+            "name": "rent",
+            "isMut": false,
+            "isSigner": false
+          },
+          {
+            "name": "systemProgram",
+            "isMut": false,
+            "isSigner": false
+          }
+        ],
+        "args": [
+          {
+            "name": "randBump",
+            "type": "u8"
+          },
+          {
+            "name": "uuid",
+            "type": "u64"
+          },
+          {
+            "name": "value",
+            "type": {
+              "array": [
+                "u8",
+                64
+              ]
+            }
+          },
+          {
+            "name": "pktId",
+            "type": {
+              "array": [
+                "u8",
+                32
+              ]
+            }
+          },
+          {
+            "name": "tlsId",
+            "type": {
+              "array": [
+                "u8",
+                32
+              ]
+            }
+          }
+        ]
+      }
+    ],
+    "accounts": [
+      {
+        "name": "Random",
+        "type": {
+          "kind": "struct",
+          "fields": [
+            {
+              "name": "uuid",
+              "type": "u64"
+            },
+            {
+              "name": "oracle",
+              "type": "publicKey"
+            },
+            {
+              "name": "timestamp",
+              "type": "i64"
+            },
+            {
+              "name": "value",
+              "type": {
+                "array": [
+                  "u8",
+                  64
+                ]
+              }
+            },
+            {
+              "name": "pktId",
+              "type": {
+                "array": [
+                  "u8",
+                  32
+                ]
+              }
+            },
+            {
+              "name": "tlsId",
+              "type": {
+                "array": [
+                  "u8",
+                  32
+                ]
+              }
+            },
+            {
+              "name": "bump",
+              "type": "u8"
+            }
+          ]
+        }
+      }
+    ],
+    "metadata": {
+      "address": "Bty5iscY33GnVqzstci1gVNaikxt9aPFW4Q1FmyEqseR"
+    }
+  }

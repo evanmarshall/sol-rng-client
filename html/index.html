@@ -1,0 +1,64 @@
+
+
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>SOL RNG Beacon Client</title>
+    <meta name="description" content="Use random numbers for your projects">
+    <meta name="author" content="SitePoint">
+
+    <meta property="og:title" content="SOL RNG Beacon Client">
+    <meta property="og:type" content="website">
+    <meta property="og:description" content="Use random numbers for your projects">
+    <!-- CSS only -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+</head>
+
+<body style="background: #212529;">
+    <div class="container-fluid">
+        <div class="row" style="
+            color: white;
+            text-align: center;
+            padding: 25px;
+        ">
+            <h1>
+                Solana Random Number Beacon
+            </h1></div>
+        <div class="row">
+            <div class="col-md-10" style="margin: auto;">
+                <table class="table table-dark">
+                    <thead style="font-size:13px;">
+                      <tr>
+                        <th scope="col">UUID</th>
+                        <th scope="col">Oracle Verified</th>
+                        <th scope="col">Time</th>
+                        <th scope="col">Random</th>
+                        <th scope="col">Packet Capture</th>
+                        <th scope="col">TLS Keys</th>
+                      </tr>
+                    </thead>
+                    <tbody id='table-body'>
+                    </tbody>
+                  </table>                  
+            </div>
+        </div>
+    </div>
+    <!-- JavaScript Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>    
+    <script src='../.deploy/index.js'></script>
+    <script>
+
+        var interval = setInterval(function() {
+            if (window.allRandomDataFormatted) {
+                var tableBody = document.getElementById('table-body');
+                if (tableBody.innerHTML.trim() == '') {
+                    tableBody.innerHTML = window.allRandomDataFormatted;
+                }
+            }
+        }, 500);
+
+    </script>
+</body>
+</html>
